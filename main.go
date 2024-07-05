@@ -50,18 +50,21 @@ func intToRoman(num int) string {
 	return result
 }
 func someMath(a int, b int, op byte) string {
-	switch op {
-	case '+':
-		return strconv.Itoa(a + b)
-	case '-':
-		return strconv.Itoa(a - b)
-	case '*':
-		return strconv.Itoa(a * b)
-	case '/':
-		return strconv.Itoa(a / b)
-	default:
-		return "Invalid operator"
+	if a > 0 && b > 0 {
+		switch op {
+		case '+':
+			return strconv.Itoa(a + b)
+		case '-':
+			return strconv.Itoa(a - b)
+		case '*':
+			return strconv.Itoa(a * b)
+		case '/':
+			return strconv.Itoa(a / b)
+		default:
+			return "Invalid operator"
+		}
 	}
+	return "Invalid input: both numbers should be greater than 0"
 }
 
 func main() {
